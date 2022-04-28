@@ -7,7 +7,8 @@ const books ={
         "title": "Programação Web com Node.js",
         "image": "https://m.media-amazon.com/images/I/4110e7iseFL.jpg",
         "price": 14.99,
-        "url": "https://www.luiztools.com.br/livro-node-amazon" 
+        "url": "https://www.luiztools.com.br/livro-node-amazon",
+         
 }
 function App() {
   return (
@@ -16,9 +17,6 @@ function App() {
         <h1>Lista de Livros</h1>
         <Books books= {books} />
       </Container>
-      
-      
-      
     </div>
   );
 }
