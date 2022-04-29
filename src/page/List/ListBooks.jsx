@@ -2,25 +2,31 @@ import React,{useState, useEffect} from 'react';
 import Books from '../../components/Books/Books';
 import axios from 'axios';
 
-const PagesPromotionList=() =>{
+const PagesListBooks=() =>{
  
-       const [promotions, setPromotions] = useState([]);
+       const [lbooks, setBooks] = useState([]);
+       const [search, setSearch] = useState('')
   
-       useEffect( () => {
+       useEffect( () => {const params = {};
+       if(search){
+         params.title_like =search;
+       }
   
-      axios.get('http://localhost:5000/promotions?_embed=comments')
+      axios.get('http://localhost:5000/books',params)
         .then(
           (response) => {
-          console.log(response.data);
-          setPromotions(response.data);
+          // console.log(response.data);
+          setBooks(response.data);
           }
         );
   
       }, [] );
       return (
           <div>
-            {promotions.map(( promotions) => (
-              <PromotionCard promotion={promotions} key ={promotions.id}/>
+            
+
+            {lbooks.map((books) => (
+              <Books books={books} key ={books.id}/>
               )
               )
             }
@@ -28,5 +34,5 @@ const PagesPromotionList=() =>{
       )
   }
   
-  export default PagesPromotionList;
+  export default PagesListBooks;
 
