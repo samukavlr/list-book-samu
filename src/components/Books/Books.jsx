@@ -4,9 +4,15 @@ import styled from 'styled-components'
 
 //function Books(){
 //}
+
+const Container= styled.div`
+ background-color: rgb(255, 60, 0);
+
+
+`
 const ItemContainer= styled.div`
     border-radius: 4px;
-    background-color: #ccc;
+    background-color: rgb(255, 60, 0);
     height: 120px;
     width: 262px;
     color:#29303b;
@@ -36,17 +42,18 @@ const Thunbnail = styled.img`
 
 const Books = ({books}) => {
     return(
-       <ItemLink hfef= {books.url} title="Clique para comprar">
-            <ItemContainer>
-                <Thunbnail src={books.image}></Thunbnail>
-                <TitlePane >{books.title}</TitlePane>
-                <PricePane >R$ {books.price}</PricePane>
-                <Button variant="primary">Comprar</Button>
-            </ItemContainer>
-        </ItemLink>
+        <Container>
+            <ItemLink hfef= {books.url} title="Clique para comprar">
+                <ItemContainer>
+                    <Thunbnail src={books.image}></Thunbnail>
+                    <TitlePane >{books.title}</TitlePane>
+                    <PricePane >R$ {books.price}</PricePane>
+                    <Button variant="primary">Comprar</Button>
+                </ItemContainer>
+            </ItemLink>
+        </Container>
     )
 }
-
 
 export default Books;
 

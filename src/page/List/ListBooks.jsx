@@ -5,14 +5,12 @@ import axios from 'axios';
 const PagesListBooks=() =>{
  
        const [lbooks, setBooks] = useState([]);
-       const [search, setSearch] = useState('')
+       
   
-       useEffect( () => {const params = {};
-       if(search){
-         params.title_like =search;
-       }
+       useEffect( () => {
+       
   
-      axios.get('http://localhost:5000/books',params)
+      axios.get('http://localhost:5000/books')
         .then(
           (response) => {
           // console.log(response.data);
