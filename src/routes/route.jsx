@@ -5,15 +5,16 @@ import {
     Route,
     Link
   } from "react-router-dom";
-
 import PagesListBooks from 'page/List/ListBooks';
 
 
   const Root =() =>{
       return(
           <Router>
-              <Routes>            
+              <Routes>                      
                 <Route path="/" element={<PagesListBooks />} />
+                <Route path="/create" element={<PagesListBooks />} />
+                <Route path="/edit/:id" element={<PagesListBooks />} />
               </Routes>
           </Router>
       )

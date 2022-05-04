@@ -6,6 +6,7 @@ import Root from './routes/route'
 
 
 
+
 // const books ={ 
 //         "title": "Programação Web com Node.js",
 //         "image": "https://m.media-amazon.com/images/I/4110e7iseFL.jpg",
@@ -16,7 +17,6 @@ import Root from './routes/route'
 function App() {
   return (
     <div>
-        <h1>Lista de Livros</h1>
         {/* <Books books= {books} /> */}
         <Root />
     </div>

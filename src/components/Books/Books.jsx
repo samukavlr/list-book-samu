@@ -5,11 +5,7 @@ import styled from 'styled-components'
 //function Books(){
 //}
 
-const Container= styled.div`
- background-color: rgb(255, 60, 0);
 
-
-`
 const ItemContainer= styled.div`
     border-radius: 4px;
     background-color: rgb(255, 60, 0);
@@ -42,7 +38,7 @@ const Thunbnail = styled.img`
 
 const Books = ({books}) => {
     return(
-        <Container>
+       
             <ItemLink hfef= {books.url} title="Clique para comprar">
                 <ItemContainer>
                     <Thunbnail src={books.image}></Thunbnail>
@@ -51,7 +47,7 @@ const Books = ({books}) => {
                     <Button variant="primary">Comprar</Button>
                 </ItemContainer>
             </ItemLink>
-        </Container>
+        
     )
 }
 
