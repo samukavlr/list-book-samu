@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import PagesListBooks from 'page/List/ListBooks';
+import Newbooks from 'page/Newbooks/newbooks';
 
 
   const Root =() =>{
@@ -13,7 +14,7 @@ import PagesListBooks from 'page/List/ListBooks';
           <Router>
               <Routes>                      
                 <Route path="/" element={<PagesListBooks />} />
-                <Route path="/create" element={<PagesListBooks />} />
+                <Route path="/create" element={<Newbooks />} />
                 <Route path="/edit/:id" element={<PagesListBooks />} />
               </Routes>
           </Router>

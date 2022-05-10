@@ -4,6 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import listCss from './ListBooks.module.css';
 
+
+
 // const Container = styled.div`
 //     display:flex;
 //     justify-content:center;
@@ -36,6 +38,7 @@ const PagesListBooks=() =>{
       return (
           <div >
             <h1 className={listCss.listTitle}>Lista de Livros</h1>
+            <a href="/create">novo livro</a>
             <input className={listCss.lisInput} type="text"
             placeholder='Buscar'
             value={search}
