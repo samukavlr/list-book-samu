@@ -9,9 +9,9 @@ import UIButton from '../../components/UI/Button/Button'
 
  const initialvalue={
         title:'',
-        imageUrl:'',
-        url:'',
+        image:'',
         price:0,
+        url:'',
     }
 function Newbooks({id}) {
    
@@ -65,8 +65,13 @@ function Newbooks({id}) {
                 </div>
 
                 <div className={nbCss.promotionFormGroup}> 
-                    <label htmlFor="imageUrl">Url image</label>
-                    <input type="text" id="imageUrl" name="imageUrl" value={values.imageUrl} onChange={onchnage}/>
+                    <label htmlFor="image">Image</label>
+                    <input type="text" id="image" name="image" value={values.image} onChange={onchnage}/>
+                </div>
+
+                <div className={nbCss.promotionFormGroup}> 
+                    <label htmlFor="price">Preço</label>
+                    <input type="text" step="any" id="price" name="price" value={values.price} onChange={onchnage}/>
                 </div>
 
                 <div className={nbCss.promotionFormGroup}>
@@ -74,10 +79,6 @@ function Newbooks({id}) {
                     <input type="text" id="url" name="url" value={values.url} onChange={onchnage}/>
                 </div>
 
-                <div className={nbCss.promotionFormGroup}> 
-                    <label htmlFor="price">Preço</label>
-                    <input type="text" step="any" id="price" name="price" value={values.price} onChange={onchnage}/>
-                </div>
                 <div >
                     <UIButton 
                     component="button"

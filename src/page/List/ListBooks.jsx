@@ -3,6 +3,7 @@ import Books from '../../components/Books/Books';
 import axios from 'axios';
 import styled from 'styled-components';
 import listCss from './ListBooks.module.css';
+import UIContainer from 'components/UI/Container/Container';
 
 
 
@@ -37,8 +38,9 @@ const PagesListBooks=() =>{
       }, [search] );
       return (
           <div >
+            <UIContainer>
             <h1 className={listCss.listTitle}>Lista de Livros</h1>
-            <a href="/create">novo livro</a>
+            <a href="/create"> <button className={listCss.novolivro}>Incluir livro </button></a>
             <input className={listCss.lisInput} type="text"
             placeholder='Buscar'
             value={search}
@@ -46,9 +48,10 @@ const PagesListBooks=() =>{
               <section className={listCss.booksList}>
                 {lbooks.map((books) => (
                   <Books books={books} key ={books.id}/>
-                ))
+                  ))
                 }
               </section>
+            </UIContainer>
           </div>
       )
   }

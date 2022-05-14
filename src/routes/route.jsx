@@ -15,7 +15,7 @@ import Newbooks from 'page/Newbooks/newbooks';
               <Routes>                      
                 <Route path="/" element={<PagesListBooks />} />
                 <Route path="/create" element={<Newbooks />} />
-                <Route path="/edit/:id" element={<PagesListBooks />} />
+                <Route path="/edit/:id" element={<Newbooks/>} />
               </Routes>
           </Router>
       )

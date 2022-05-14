@@ -1,13 +1,16 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import booksCss from './books.module.css';
+import {Link} from 'react-router-dom'
+
 
 //function Books(){
 //}
 
 
 const ItemContainer= styled.div`
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: rgb(255, 60, 0);
     height: 120px;
     width: 262px;
@@ -36,6 +39,7 @@ const Thunbnail = styled.img`
 
 `;
 
+
 const Books = ({books}) => {
     return(
        
@@ -44,10 +48,19 @@ const Books = ({books}) => {
                     <Thunbnail src={books.image}></Thunbnail>
                     <TitlePane >{books.title}</TitlePane>
                     <PricePane >R$ {books.price}</PricePane>
-                    <Button variant="primary">Comprar</Button>
+                    <Button 
+                        href={books.url} target="_blank" variant="primary">
+                        Comprar
+                    </Button>
+                    <Button
+                        className={booksCss.editar}
+                        
+                        href={`/edit/${books.id}`}
+                        >
+                        Editar
+                    </Button>; 
                 </ItemContainer>
-            </ItemLink>
-        
+            </ItemLink>       
     )
 }
 

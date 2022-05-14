@@ -55,8 +55,8 @@ const ListForm =({id}) => {
                 </div>
 
                 <div className={formCss.promotionFormGroup}> 
-                    <label htmlFor="imageUrl">Url image</label>
-                    <input type="text" id="imageUrl" name="imageUrl" value={values.imageUrl} onChange={onchnage}/>
+                    <label htmlFor="image">Url image</label>
+                    <input type="text" id="image" name="image" value={values.imageUrl} onChange={onchnage}/>
                 </div>
 
                 <div className={formCss.promotionFormGroup}>
