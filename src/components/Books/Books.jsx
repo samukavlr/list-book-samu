@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import booksCss from './books.module.css';
 import {Link} from 'react-router-dom'
+import UIButton from 'components/UI/Button/Button'
 
 
 //function Books(){
@@ -52,13 +53,13 @@ const Books = ({books}) => {
                         href={books.url} target="_blank" variant="primary">
                         Comprar
                     </Button>
-                    <Button
+                    <UIButton
                         className={booksCss.editar}
-                        
-                        href={`/edit/${books.id}`}
+                        component={Link}
+                        to={`/edit/${books.id}`}
                         >
                         Editar
-                    </Button>; 
+                    </UIButton>
                 </ItemContainer>
             </ItemLink>       
     )

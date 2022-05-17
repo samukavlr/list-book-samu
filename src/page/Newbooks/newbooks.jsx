@@ -1,11 +1,9 @@
-import React from 'react';
-import {useEffect,useState} from 'react';
-import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
-import {Link} from 'react-router-dom';
+import React, {useEffect,useState} from 'react';
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import nbCss from './newbooks.module.css';
 import UIContainer from '../../components/UI/Container/Container'
 import UIButton from '../../components/UI/Button/Button'
+import axios from 'axios';
 
  const initialvalue={
         title:'',
@@ -14,10 +12,12 @@ import UIButton from '../../components/UI/Button/Button'
         url:'',
     }
 function Newbooks({id}) {
+    // const id =useParams();
    
-     const [values, setValues]=useState(initialvalue);
+     const [values, setValues]=useState(id? null: initialvalue);
+     const [acao, setAcao] = useState('Cadastrar')
      const navigate = useNavigate();
-        
+     console.log(id);   
     
     
        
@@ -33,7 +33,9 @@ function Newbooks({id}) {
                 axios.get(`http://localhost:5001/books/${id}`)
                 .then((response)=>{
                     setValues(response.data);
+                    console.log(response.data);
                 })
+                setAcao('Editar');
             }
     
         },[])
@@ -57,7 +59,7 @@ function Newbooks({id}) {
         <div >
             <UIContainer>
            <h1>Lista de Livros</h1>
-            <h2>Cadastrar livros</h2>
+            <h2>{acao} livros</h2>
             <form onSubmit={onSubmit}>
                 <div className={nbCss.promotionFormGroup}>
                     <label htmlFor="title">Título</label>

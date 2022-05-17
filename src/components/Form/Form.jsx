@@ -1,8 +1,7 @@
 import React, {useEffect,useState} from 'react'
-import fromCss from './From.module.css'
 import{useNavigate} from 'react-router-dom'
 import axios from 'axios';
-import listCss from 'page/List/ListBooks.module.css'
+import formCss from 'Form/Form.module.css'
 
 const initialvalue={
     title:'',
@@ -11,7 +10,7 @@ const initialvalue={
     url:'',
 }
 
-const ListForm =({id}) => {
+const Editform =({id}) => {
     const [values, setValues]=useState(initialvalue);
     const navigate = useNavigate();
 
@@ -22,9 +21,9 @@ const ListForm =({id}) => {
 
     useEffect(()=>{
         if(id){
-            axios.get(`http://localhost:5001/books${id}`)
+            axios.get(`http://localhost:5001/books/${id}`)
             .then((response)=>{
-                setValues(response.data);
+                setValues(response.data);console.log(response.data);
             })
         }
 
@@ -34,8 +33,8 @@ const ListForm =({id}) => {
 
         const method = id ? 'put' : 'post';
         const url = id 
-            ? `http://localhost:5000/promotions/${id}` 
-            : 'http://localhost:5000/promotions'
+            ? `http://localhost:5001/books/${id}`
+            : `http://localhost:5001/books/`
 
         axios[method](url, values)
             .then( (response) => {
@@ -92,4 +91,4 @@ const ListForm =({id}) => {
 
 }
 
-export default ListForm
+export default Editform
