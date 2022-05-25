@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Programação Web com Node.js",
+      "image": "https://m.media-amazon.com/images/I/4110e7iseFL.jpg",
+      "price": 14.99,
+      "url": "https://www.luiztools.com.br/livro-node-amazon"
+    },
+    {
+      "id": "2",
+      "title": "Node.js e Microservices",
+      "image": "https://m.media-amazon.com/images/I/41CUCsnLPML.jpg",
+      "price": 14.99,
+      "url": "https://www.luiztools.com.br/livro-node-ii-amazon"
+    },
+    {
+      "id": "3",
+      "title": "MongoDB para Iniciantes",
+      "image": "https://m.media-amazon.com/images/I/31NR3RRS3VL.jpg",
+      "price": 11.99,
+      "url": "https://www.luiztools.com.br/livro-mongodb-amazon"
+    },
+    {
+      "title": "herry potter 2",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51SnGLrrJcL._SX346_BO1,204,203,200_.jpg",
+      "price": "23.50",
+      "url": "https://www.amazon.com.br/Harry-Potter-C%C3%A2mara-Secreta-Rowling/dp/8532530796/ref=asc_df_8532530796/?tag=googleshopp00-20&linkCode=df0&hvadid=379793566310&hvpos=&hvnetw=g&hvrand=16207855294457440764&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001729&hvtargid=pla-395340058270&psc=1",
+      "id": "47WV1Dl"
+    },
+    {
+      "title": "Harry Potter e o enigma do príncipe Capa dura",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51msVf94L2L._SX346_BO1,204,203,200_.jpg",
+      "price": "30,90",
+      "url": "https://www.amazon.com.br/Harry-Potter-Enigma-do-Pr%C3%ADncipe/dp/8532530834/ref=pd_sbs_sccl_2_5/140-2190077-7818005?pd_rd_w=Ft5h9&pf_rd_p=1eb83ecb-3d38-4c15-9700-c733345d3c82&pf_rd_r=2QKF5559D4AQAQ1DZD6V&pd_rd_r=a826bcca-5af6-4370-b9d9-ed1dca6bbfb9&pd_rd_wg=iMUCT&pd_rd_i=8532530834&psc=1",
+      "id": "4EVsvfH"
+    }
+  ]
+}
