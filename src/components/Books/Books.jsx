@@ -48,7 +48,7 @@ const Books = ({books}) => {
             <ItemLink>
                 <ItemContainer>
                     <Thunbnail src={books.image}></Thunbnail>
-                    <TitlePane >{books.title}</TitlePane>
+                    <TitlePane >{books.title.substring(0,26)}...</TitlePane>
                     <PricePane >R$ {books.price}</PricePane>
                     <Button 
                         href={books.url} target="_blank" variant="primary">
