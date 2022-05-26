@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import booksCss from './books.module.css';
 import {Link} from 'react-router-dom'
 import UIButton from 'components/UI/Button/Button'
+import {Trash} from 'phosphor-react'
 
 
 //function Books(){
@@ -43,8 +44,8 @@ const Thunbnail = styled.img`
 
 const Books = ({books}) => {
     return(
-       
-            <ItemLink hfef= {books.url} title="Clique para comprar">
+        // hfef= {books.url} title="Clique para comprar"
+            <ItemLink>
                 <ItemContainer>
                     <Thunbnail src={books.image}></Thunbnail>
                     <TitlePane >{books.title}</TitlePane>
@@ -60,6 +61,9 @@ const Books = ({books}) => {
                         >
                         Editar
                     </UIButton>
+                    <button>
+                        <Trash size={32} color="#f91201" weight="light" />
+                    </button>
                 </ItemContainer>
             </ItemLink>       
     )

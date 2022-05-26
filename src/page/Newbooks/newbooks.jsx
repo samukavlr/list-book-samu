@@ -14,7 +14,7 @@ import axios from 'axios';
 function Newbooks({id}) {
     // const id =useParams();
    
-     const [values, setValues]=useState(id? null: initialvalue);
+     const [values, setValues]=useState(initialvalue);
      const [acao, setAcao] = useState('Cadastrar')
      const navigate = useNavigate();
      console.log(id);   
@@ -22,20 +22,21 @@ function Newbooks({id}) {
     
        
         
-        function onchnage(ev){
+        function onChange(ev){
             const {name, value }= ev.target;
             
             setValues({...values,[name]:value})        
         }
     
-        useEffect(()=>{
+        useEffect( ()=>{
             if(id){
-                axios.get(`http://localhost:5001/books/${id}`)
+                axios.get(`https://apilistbooks.azurewebsites.net/books/${id}`)
                 .then((response)=>{
                     setValues(response.data);
-                    console.log(response.data);
+                    console.log(values);
+                    setAcao('Editar')
                 })
-                setAcao('Editar');
+                
             }
     
         },[])
@@ -45,8 +46,8 @@ function Newbooks({id}) {
     
             const method = id ? 'put' : 'post';
             const url = id 
-                ? `http://localhost:5001/books/${id}` 
-                : 'http://localhost:5001/books'
+                ? `https://apilistbooks.azurewebsites.net/books/${id}` 
+                : 'https://apilistbooks.azurewebsites.net/books'
     
             axios[method](url, values)
                 .then( (response) => {
@@ -63,22 +64,22 @@ function Newbooks({id}) {
             <form onSubmit={onSubmit}>
                 <div className={nbCss.promotionFormGroup}>
                     <label htmlFor="title">Título</label>
-                    <input type="text" id="title" name="title" value={values.title} onChange={onchnage}/>
+                    <input type="text" id="title" name="title" value={values.title} onChange={onChange}/>
                 </div>
 
                 <div className={nbCss.promotionFormGroup}> 
                     <label htmlFor="image">Image</label>
-                    <input type="text" id="image" name="image" value={values.image} onChange={onchnage}/>
+                    <input type="text" id="image" name="image" value={values.image} onChange={onChange}/>
                 </div>
 
                 <div className={nbCss.promotionFormGroup}> 
                     <label htmlFor="price">Preço</label>
-                    <input type="text" step="any" id="price" name="price" value={values.price} onChange={onchnage}/>
+                    <input type="text" step="any" id="price" name="price" value={values.price} onChange={onChange}/>
                 </div>
 
                 <div className={nbCss.promotionFormGroup}>
                     <label htmlFor="url">Url</label>
-                    <input type="text" id="url" name="url" value={values.url} onChange={onchnage}/>
+                    <input type="text" id="url" name="url" value={values.url} onChange={onChange}/>
                 </div>
 
                 <div >

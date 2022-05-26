@@ -27,7 +27,7 @@ const PagesListBooks=() =>{
         }
        
   
-      axios.get('http://localhost:5001/books', {params})
+      axios.get('https://apilistbooks.azurewebsites.net/books/', {params})
         .then(
           (response) => {
           // console.log(response.data);
