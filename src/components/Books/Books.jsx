@@ -13,21 +13,20 @@ import {Trash} from 'phosphor-react'
 
 const ItemContainer= styled.div`
     border-radius: 10px;
-    background-color: rgb(255, 60, 0);
+    background-color: hsl(210, 40%, 72%);
     height: 120px;
-    width: 262px;
+    width: 300px;
     color:#29303b;
     margin-bottom: 10px;
     margin-right: 10px;
-    padding: 10px;
+    padding: 5px;
+    position: relative;
 `;
 const TitlePane = styled.div`
     font-weight: 700;
     margin-borrom: 5px;
 `;
-const ItemLink = styled.a`
-    text-decoration:none;
-`;
+
 const PricePane = styled.div`
     margin-bottom: 5px;
 `;
@@ -38,19 +37,25 @@ const Thunbnail = styled.img`
     vertical-align: middle;
     float: left;
     margin-right: 10px;
-
 `;
 
 
-const Books = ({books}) => {
+const Books = ({books, onclickDelete}) => {
     return(
         // hfef= {books.url} title="Clique para comprar"
-            <ItemLink>
+            <main className={booksCss.itemLink}>
                 <ItemContainer>
                     <Thunbnail src={books.image}></Thunbnail>
-                    <TitlePane >{books.title.substring(0,26)}...</TitlePane>
+                    <TitlePane >{books.title.substring(0,26)}...
+                    <button type='button'
+                    onClick={onclickDelete}
+                    className={booksCss.delete}>
+                        <Trash size={16} color="#f91201" weight="light" />
+                    </button>      
+                    </TitlePane>
                     <PricePane >R$ {books.price}</PricePane>
                     <Button 
+                        className={booksCss.btncomprar}
                         href={books.url} target="_blank" variant="primary">
                         Comprar
                     </Button>
@@ -61,11 +66,8 @@ const Books = ({books}) => {
                         >
                         Editar
                     </UIButton>
-                    <button>
-                        <Trash size={32} color="#f91201" weight="light" />
-                    </button>
                 </ItemContainer>
-            </ItemLink>       
+            </main>    
     )
 }
 

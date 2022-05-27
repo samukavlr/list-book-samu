@@ -4,6 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import listCss from './ListBooks.module.css';
 import UIContainer from 'components/UI/Container/Container';
+import api from 'services/api';
 
 
 
@@ -18,6 +19,7 @@ const PagesListBooks=() =>{
  
        const [lbooks, setBooks] = useState([]);
        const [search, setSearch] = useState('');
+       const [onDelete,setOnDelete]=useState(null)
        
   
        useEffect( () => {
@@ -35,7 +37,20 @@ const PagesListBooks=() =>{
           }
         );
   
-      }, [search] );
+      }, [search ,onDelete] );
+      const handleDelete= async (id) => {
+        setOnDelete(id)
+       //  const metodo ='delete';
+       //  const url =`promotion/${id}`
+       //  await api [metodo](url)
+       try{
+        await api.delete(`https://apilistbooks.azurewebsites.net/books/${id}`)
+        setOnDelete(id);
+       }catch(erro){
+         console.log(erro);
+       }
+        
+      }
       return (
           <div >
             <UIContainer>
@@ -47,7 +62,10 @@ const PagesListBooks=() =>{
             onChange={(ev) => setSearch(ev.target.value)} />         
               <section className={listCss.booksList}>
                 {lbooks.map((books) => (
-                  <Books books={books} key ={books.id}/>
+                  <Books 
+                  books={books}
+                  key ={books.id}
+                  onclickDelete={ ()=> handleDelete(books.id) }/> 
                   ))
                 }
               </section>
